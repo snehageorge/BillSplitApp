@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		20AEA7D72DA6EC94007FF7A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 20AEA7D62DA6EC94007FF7A4 /* SDWebImageSwiftUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		20AEA7992DA6E23C007FF7A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,50 @@
 		20AEA7A22DA6E23C007FF7A4 /* BillSplitAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillSplitAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		20AEA7BE2DA6E483007FF7A4 /* Exceptions for "BillSplitApp" folder in "BillSplitAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Coordinator/AppView.swift,
+				Coordinator/MainCoordinator.swift,
+				Views/BillDetailsView.swift,
+				Views/BillListRowView.swift,
+				Views/BillListView.swift,
+				Views/BillSplitBottomMenuBar.swift,
+				Views/BillSplitChatView.swift,
+				Views/BillSplitDocumentsView.swift,
+				Views/BillSplitProfileView.swift,
+				Views/BillSplitScanView.swift,
+				Views/NotificationListView.swift,
+			);
+			target = 20AEA7972DA6E23C007FF7A4 /* BillSplitAppTests */;
+		};
+		20AEA7BF2DA6E483007FF7A4 /* Exceptions for "BillSplitApp" folder in "BillSplitAppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Coordinator/AppView.swift,
+				Coordinator/MainCoordinator.swift,
+				Views/BillDetailsView.swift,
+				Views/BillListRowView.swift,
+				Views/BillListView.swift,
+				Views/BillSplitBottomMenuBar.swift,
+				Views/BillSplitChatView.swift,
+				Views/BillSplitDocumentsView.swift,
+				Views/BillSplitProfileView.swift,
+				Views/BillSplitScanView.swift,
+				Views/NotificationListView.swift,
+			);
+			target = 20AEA7A12DA6E23C007FF7A4 /* BillSplitAppUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		20AEA78A2DA6E23A007FF7A4 /* BillSplitApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				20AEA7BE2DA6E483007FF7A4 /* Exceptions for "BillSplitApp" folder in "BillSplitAppTests" target */,
+				20AEA7BF2DA6E483007FF7A4 /* Exceptions for "BillSplitApp" folder in "BillSplitAppUITests" target */,
+			);
 			path = BillSplitApp;
 			sourceTree = "<group>";
 		};
@@ -52,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AEA7D72DA6EC94007FF7A4 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +158,7 @@
 			);
 			name = BillSplitApp;
 			packageProductDependencies = (
+				20AEA7D62DA6EC94007FF7A4 /* SDWebImageSwiftUI */,
 			);
 			productName = BillSplitApp;
 			productReference = 20AEA7882DA6E23A007FF7A4 /* BillSplitApp.app */;
@@ -195,6 +242,9 @@
 			);
 			mainGroup = 20AEA77F2DA6E23A007FF7A4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				20AEA7D52DA6EC94007FF7A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 20AEA7892DA6E23A007FF7A4 /* Products */;
 			projectDirPath = "";
@@ -558,6 +608,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		20AEA7D52DA6EC94007FF7A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		20AEA7D62DA6EC94007FF7A4 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20AEA7D52DA6EC94007FF7A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 20AEA7802DA6E23A007FF7A4 /* Project object */;
 }
