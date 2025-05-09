@@ -9,7 +9,9 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct BillListView: View {
-    @StateObject var viewModel = BillListViewModel()
+    @StateObject var viewModel = BillListViewModel(
+        billLoader: StaticBillProvider()
+    )
     
     var onSelectBill: (Bill) -> Void
     var onNotificationsTapped: () -> Void

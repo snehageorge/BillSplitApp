@@ -33,50 +33,9 @@
 		20AEA7A22DA6E23C007FF7A4 /* BillSplitAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillSplitAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		20AEA7BE2DA6E483007FF7A4 /* Exceptions for "BillSplitApp" folder in "BillSplitAppTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Coordinator/AppView.swift,
-				Coordinator/MainCoordinator.swift,
-				Views/BillDetailsView.swift,
-				Views/BillListRowView.swift,
-				Views/BillListView.swift,
-				Views/BillSplitBottomMenuBar.swift,
-				Views/BillSplitChatView.swift,
-				Views/BillSplitDocumentsView.swift,
-				Views/BillSplitProfileView.swift,
-				Views/BillSplitScanView.swift,
-				Views/NotificationListView.swift,
-			);
-			target = 20AEA7972DA6E23C007FF7A4 /* BillSplitAppTests */;
-		};
-		20AEA7BF2DA6E483007FF7A4 /* Exceptions for "BillSplitApp" folder in "BillSplitAppUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Coordinator/AppView.swift,
-				Coordinator/MainCoordinator.swift,
-				Views/BillDetailsView.swift,
-				Views/BillListRowView.swift,
-				Views/BillListView.swift,
-				Views/BillSplitBottomMenuBar.swift,
-				Views/BillSplitChatView.swift,
-				Views/BillSplitDocumentsView.swift,
-				Views/BillSplitProfileView.swift,
-				Views/BillSplitScanView.swift,
-				Views/NotificationListView.swift,
-			);
-			target = 20AEA7A12DA6E23C007FF7A4 /* BillSplitAppUITests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		20AEA78A2DA6E23A007FF7A4 /* BillSplitApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				20AEA7BE2DA6E483007FF7A4 /* Exceptions for "BillSplitApp" folder in "BillSplitAppTests" target */,
-				20AEA7BF2DA6E483007FF7A4 /* Exceptions for "BillSplitApp" folder in "BillSplitAppUITests" target */,
-			);
 			path = BillSplitApp;
 			sourceTree = "<group>";
 		};

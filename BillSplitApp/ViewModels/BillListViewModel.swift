@@ -12,23 +12,23 @@ class BillListViewModel: ObservableObject {
     @Published var bills = [Bill]()
     @Published var isLoading = false
     
+    private let billLoader: BillLoader
+    
+    init(billLoader: BillLoader) {
+        self.billLoader = billLoader
+    }
+    
     func fetchBills() async {
-        guard let url = Bundle.main.url(forResource: "bills", withExtension: "json") else {
-            print("File not found")
-            return
-        }
-        self.isLoading = true
-        
+        isLoading = true
         defer {
-            self.isLoading = false
+            isLoading = false
         }
         
         do {
-            let data = try Data(contentsOf: url)
-            let decodedResponse = try JSONDecoder().decode(BillResponse.self, from: data)
-            self.bills = decodedResponse.bills
+            bills = try await billLoader.loadBills()
         } catch {
-            print("Failed to decode: \(error)")
+            print("Failed to load bills: \(error)")
         }
+        
     }
 }
