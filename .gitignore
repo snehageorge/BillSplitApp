@@ -3,7 +3,14 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## User settings
+*.xcuserdatad/
+*.xcscmblueprint
+*.xcuserdata
 xcuserdata/
+project.xcworkspace/xcuserdata/
+
+# Scheme management
+xcshareddata/xcschemes/xcschememanagement.plist
 
 ## Obj-C/Swift specific
 *.hmap
@@ -24,6 +31,8 @@ playground.xcworkspace
  Package.pins
  Package.resolved
  *.xcodeproj
+# Ignore Package.resolved from anywhere in the project
+**/Package.resolved
 #
 # Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
 # hence it is not needed unless you have added a package configuration file to your project
