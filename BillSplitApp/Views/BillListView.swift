@@ -9,12 +9,20 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct BillListView: View {
-    @StateObject var viewModel = BillListViewModel(
-        billLoader: StaticBillProvider()
-    )
+    @StateObject var viewModel: BillListViewModel
     
     var onSelectBill: (Bill) -> Void
     var onNotificationsTapped: () -> Void
+    
+    init(
+        viewModel: BillListViewModel,
+        onSelectBill: @escaping (Bill) -> Void,
+        onNotificationsTapped: @escaping () -> Void
+    ) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+        self.onSelectBill = onSelectBill
+        self.onNotificationsTapped = onNotificationsTapped
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -24,23 +32,30 @@ struct BillListView: View {
                 Color.black
                     .frame(maxHeight: .infinity)
                     .ignoresSafeArea()
+                    .accessibilityIdentifier("main_background")
                 
                 ScrollView {
                     VStack {
                         if viewModel.isLoading {
                             ProgressView()
                                 .foregroundStyle(.white)
+                                .accessibilityIdentifier("loading_indicator")
                         } else if viewModel.bills.isEmpty {
                             Text("No bills found")
+                                .accessibilityIdentifier("no_bills_message")
                         } else {
                             BillListTopBarView(
                                 bills: viewModel.bills,
                                 onNotificationsTapped: onNotificationsTapped
                             )
+                            .accessibilityIdentifier("bills_top_bar")
+                            
                             if isPortrait {
                                 BillCarouselView(bills: viewModel.bills, screenHeight: screenHeight)
+                                    .accessibilityIdentifier("carousel_view")
                             }
                             BillRecentSplitListView(bills: viewModel.bills, onSelectBill: onSelectBill)
+                                .accessibilityIdentifier("recent_bills_list_view")
                             Spacer()
                         }
                     }
@@ -62,7 +77,9 @@ struct BillListView: View {
                 }) {
                     Image(systemName: "bell")
                         .foregroundStyle(Color.white)
+                        .accessibilityIdentifier("notification_button_image")
                 }
+                .accessibilityIdentifier("notification_button")
             }
         }
     }
@@ -100,12 +117,14 @@ struct BillCarouselView: View {
         ZStack {
             Color.yellow
                 .clipShape(RoundedRectangle(cornerRadius: 20))
+                .accessibilityIdentifier("carousel_background")
             VStack {
                 HStack {
                     ForEach(0..<bills.prefix(2).count, id: \.self) { index in
                         Circle()
                             .fill(index == selectedIndex ? Color.black : Color.gray.opacity(0.5))
                             .frame(width: 8, height: 8)
+                            .accessibilityIdentifier("carousel_dot_\(index)")
                     }
                 }
                 .padding(.top)
@@ -117,6 +136,7 @@ struct BillCarouselView: View {
                                 .padding(.top)
                                 .scaledToFit()
                                 .frame(width: 230, height: 230)
+                                .accessibilityIdentifier("carousel_food_image_\(index)")
                             
                             HStack {
                                 WebImage(url: URL(string: bill.shopLogo))
@@ -193,9 +213,14 @@ struct BillRecentSplitListView: View {
 }
 
 #Preview {
-    BillListView( onSelectBill: { bill in
-        print("Selected bill: \(bill.shopName)")
-    }, onNotificationsTapped: {
-        print("Notifications tapped")
-    })
+    BillListView(
+        viewModel: BillListViewModel(
+            billLoader: MockBillProvider()
+        ),
+        onSelectBill: { bill in
+            print("Selected bill: \(bill.shopName)")
+        },
+        onNotificationsTapped: {
+            print("Notifications tapped")
+        })
 }

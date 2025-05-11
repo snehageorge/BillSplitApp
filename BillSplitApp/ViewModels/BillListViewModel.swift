@@ -7,7 +7,7 @@
 
 import Foundation
 
-@MainActor
+
 class BillListViewModel: ObservableObject {
     @Published var bills = [Bill]()
     @Published var isLoading = false
@@ -18,6 +18,7 @@ class BillListViewModel: ObservableObject {
         self.billLoader = billLoader
     }
     
+    @MainActor
     func fetchBills() async {
         isLoading = true
         defer {

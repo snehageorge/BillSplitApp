@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203447972DD0AF0000BF9288 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 203447962DD0AF0000BF9288 /* SDWebImageSwiftUI */; };
 		20AEA7D72DA6EC94007FF7A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 20AEA7D62DA6EC94007FF7A4 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
@@ -71,18 +72,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203447972DD0AF0000BF9288 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		203447952DD0AF0000BF9288 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		20AEA77F2DA6E23A007FF7A4 = {
 			isa = PBXGroup;
 			children = (
 				20AEA78A2DA6E23A007FF7A4 /* BillSplitApp */,
 				20AEA79B2DA6E23C007FF7A4 /* BillSplitAppTests */,
 				20AEA7A52DA6E23C007FF7A4 /* BillSplitAppUITests */,
+				203447952DD0AF0000BF9288 /* Frameworks */,
 				20AEA7892DA6E23A007FF7A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,6 +174,7 @@
 			);
 			name = BillSplitAppUITests;
 			packageProductDependencies = (
+				203447962DD0AF0000BF9288 /* SDWebImageSwiftUI */,
 			);
 			productName = BillSplitAppUITests;
 			productReference = 20AEA7A22DA6E23C007FF7A4 /* BillSplitAppUITests.xctest */;
@@ -580,6 +591,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		203447962DD0AF0000BF9288 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20AEA7D52DA6EC94007FF7A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		20AEA7D62DA6EC94007FF7A4 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 20AEA7D52DA6EC94007FF7A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

@@ -6,21 +6,17 @@
 //
 
 import XCTest
-
 @testable import BillSplitApp
 
-@MainActor
 final class BillListViewModelTests: XCTestCase {
 
     var viewModel: BillListViewModel!
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        viewModel = BillListViewModel(billLoader: MockBillLoader())
+        viewModel = BillListViewModel(billLoader: MockBillProvider())
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         viewModel = nil
     }
     

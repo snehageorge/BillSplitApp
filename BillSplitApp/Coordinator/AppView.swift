@@ -16,12 +16,8 @@ struct AppView: View {
                     Group {
                         switch coordinator.selectedTab {
                         case .bills:
-                            BillListView(onSelectBill: { bill in
-                                coordinator.showBillDetails(bill)
-                            }, onNotificationsTapped: {
-                                coordinator.showNotifications()
-                            })
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                coordinator.makeBillListView()
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                         case .documents:
                             BillSplitDocumentsView()
                         case .scan:
